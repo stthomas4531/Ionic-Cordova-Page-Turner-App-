@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Table of Contents</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let chapter of appPages" >
+    <ion-item [routerDirection]="'root'" [routerLink]="[chapter.url]">
+      <ion-icon [name]="chapter.icon" slot="start" ></ion-icon>
+      {{chapter.title}}  |  {{chapter.note}}
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button [routerDirection]="'root'" [routerLink]="['/home']">
+        <ion-icon slot="icon-only" name="arrow-dropleft"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title></ion-title>
+
+    <ion-buttons slot="primary">
+      <ion-button [routerDirection]="'root'" [routerLink]="['/chapter1']">
+        <ion-icon slot="icon-only" name="arrow-dropright"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
